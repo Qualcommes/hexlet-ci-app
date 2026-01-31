@@ -1,0 +1,11 @@
+name: say-hello
+# on – определяет события, которые запускают воркфлоу
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make setup
+      - run: make test
+      - run: make lint
